@@ -1,4 +1,4 @@
-import { Schema, SchemaDefinition, SchemaDefinitionType, model } from 'mongoose';
+import { Schema, SchemaDefinition, model } from 'mongoose';
 
 export interface IUser {
   name: string;
@@ -6,7 +6,7 @@ export interface IUser {
   photo?: string;
 }
 
-const definition: SchemaDefinition<SchemaDefinitionType<IUser>> = {
+const definition: SchemaDefinition<IUser> = {
   name: {
     type: String,
     required: [true, '請輸入您的名字']

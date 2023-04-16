@@ -1,4 +1,4 @@
-import { Model, Schema, SchemaDefinition, SchemaDefinitionType, model } from 'mongoose';
+import { Schema, SchemaDefinition, model } from 'mongoose';
 
 require('./users.model'); // 必須載入，否則會找不到users
 
@@ -13,7 +13,7 @@ export interface IPost {
   comments?: number;
 }
 
-const definition: SchemaDefinition = {
+const definition: SchemaDefinition<IPost> = {
   user: {
     type: Schema.Types.ObjectId,
     ref: "users", // 對應 mongoose.model('users', usersSchema) 的 'users'
