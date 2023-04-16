@@ -1,7 +1,7 @@
 import express from 'express';
 
 import handleErrorAsync from '../services/handleErrorAsync';
-import { posts } from '../controllers/posts';
+import posts from '../controllers/posts';
 
 const router = express.Router();
 

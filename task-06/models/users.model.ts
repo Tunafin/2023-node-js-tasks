@@ -4,6 +4,14 @@ export interface IUser {
   name: string;
   email: string;
   photo?: string;
+  sex: Sex;
+  password: string;
+  createdAt: Date;
+}
+
+enum Sex {
+  Male = 'male',
+  Female = 'female'
 }
 
 const definition: SchemaDefinition<IUser> = {
@@ -19,6 +27,21 @@ const definition: SchemaDefinition<IUser> = {
     select: false
   },
   photo: String,
+  sex: {
+    type: String,
+    enum: Sex
+  },
+  password: {
+    type: String,
+    required: [true, '請輸入密碼'],
+    minlength: 8,
+    select: false
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    select: false
+  }
 };
 
 const options = { versionKey: false };

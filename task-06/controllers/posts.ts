@@ -4,7 +4,7 @@ import handleSuccess from '../services/handleSuccess';
 import { handleAppError } from '../services/appError';
 import { IPost, PostsModel } from '../models/posts.model';
 
-export const posts = {
+const posts = {
   async getPosts(req: Request, res: Response, next: NextFunction) {
     const timeSort = req.query.timeSort == "asc" ? "createdAt" : "-createdAt";
     const q = req.query.q !== undefined ? { "content": new RegExp(req.query.q.toString()) } : {};
