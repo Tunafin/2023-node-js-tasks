@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "ts-node ./bin/www",
-    "start:dev": "cross-env NODE_ENV=dev nodemon -e ts --watch *.ts --exec ts-node ./bin/www",
-    "start:production": "cross-env NODE_ENV=production nodemon -e ts --watch *.ts --exec ts-node ./bin/www",
-    "serve": "nodemon -e ts --watch *.ts --exec ts-node ./bin/www"
+    "start:dev": "cross-env NODE_ENV=dev nodemon ./bin/www.ts",
+    "start:production": "cross-env NODE_ENV=production nodemon ./bin/www.ts",
+    "build": "tsc"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
