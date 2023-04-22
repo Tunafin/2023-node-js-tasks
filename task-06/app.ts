@@ -11,6 +11,7 @@ import { resErrorDev, resErrorProd } from './services/handleResError';
 // router
 import usersRouter from './routes/users.router';
 import postsRouter from './routes/posts.router';
+import uploadRouter from './routes/upload.router';
 
 const app = express();
 
@@ -25,6 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter);
+app.use('/upload', uploadRouter)
+
 
 app.use(function (req, res, next) {
   res.status(404).json({
